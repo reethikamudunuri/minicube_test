@@ -11,6 +11,15 @@ class Pod(object):
         for i in pod.spec.containers:
             images.append(i.image)
         return images
+
+    def build_pod_details(self):
+        pod_details = []
+        for pod in self.pods.items:
+            name = pod.metadata.name
+            pod_details.append(
+                Pod(
+                    name=name,))
+        return pod_details
 """
     def get_labels(self,pod):
         return pod.metadata.labels
