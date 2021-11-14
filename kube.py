@@ -11,3 +11,9 @@ class Pod(object):
         for i in pod.spec.containers:
             images.append(i.image)
         return images
+
+    def get_labels(self,pod):
+        return pod.metadata.labels
+
+    def __get_start_time(self, pod):
+        return pod.status.start_time
