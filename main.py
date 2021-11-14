@@ -7,7 +7,7 @@ import pprint
 
 def main():
     pod = Pod()
-    pods = Pod.build_pod_details()
+    pods = Pod.build_pod_details(self)
     rules = ApplyRules()
     result = rules.validate(
         pods=pods
