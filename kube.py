@@ -18,7 +18,7 @@ class Pod(object):
             name = pod.metadata.name
             pod_details.append(
                 Pod(
-                    name=name,))
+                    name=name))
         return pod_details
 """
     def get_labels(self,pod):
