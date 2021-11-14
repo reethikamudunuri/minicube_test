@@ -11,7 +11,7 @@ class Pod(object):
         for i in pod.spec.containers:
             images.append(i.image)
         return images
-
+"""
     def get_labels(self,pod):
         return pod.metadata.labels
 
@@ -34,3 +34,5 @@ class Pod(object):
                 )
             )
         return pod_details
+
+"""
