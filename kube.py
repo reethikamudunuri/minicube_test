@@ -1,27 +1,29 @@
 from kubernetes import client, config
 
+
 class Pod(object):
+
+    def __init__(self, name, images, labels, recent_start_time):
+        self.name = name
+        self.images = images
+        self.labels = labels
+        self.recent_start_time = recent_start_time
+
+
+class PodApi(object):
+
     def __init__(self):
         config.load_kube_config()
         v1 = client.CoreV1Api()
         self.pods = v1.list_pod_for_all_namespaces(watch=False)
 
-    def get_images(self,pod):
+    def __get_images(self, pod):
         images = []
-        for i in pod.spec.containers:
-            images.append(i.image)
+        for container in pod.spec.containers:
+            images.append(container.image)
         return images
 
-    def build_pod_details(self,pod):
-        pod_details = []
-        for pod in self.pods.items:
-            name = pod.metadata.name
-            pod_details.append(
-                Pod(
-                    name=name))
-        return pod_details
-"""
-    def get_labels(self,pod):
+    def __get_labels(self, pod):
         return pod.metadata.labels
 
     def __get_start_time(self, pod):
@@ -43,5 +45,3 @@ class Pod(object):
                 )
             )
         return pod_details
-
-"""

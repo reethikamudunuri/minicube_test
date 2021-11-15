@@ -1,13 +1,11 @@
-from kube import Pod
-from rules import ApplyRules
+from kube_pod_rules_validator.pod import PodApi
+from kube_pod_rules_validator.rules import ApplyRules
 import pprint
 
 
-
-
 def main():
-    pod = Pod()
-    pods = Pod.build_pod_details()
+    pod_api = PodApi()
+    pods = pod_api.build_pod_details()
     rules = ApplyRules()
     result = rules.validate(
         pods=pods
@@ -16,5 +14,6 @@ def main():
     pp.pprint(result)
 
 
+# start of projection execution
 if __name__ == '__main__':
     main()
