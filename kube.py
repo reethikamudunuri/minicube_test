@@ -12,7 +12,7 @@ class Pod(object):
             images.append(i.image)
         return images
 
-    def build_pod_details(self,pod):
+    def build_pod_details(self):
         pod_details = []
         for pod in self.pods.items:
             name = pod.metadata.name
