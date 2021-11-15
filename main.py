@@ -10,7 +10,8 @@ def main():
     result = rules.validate(
         pods=pods
     )
-    print(result)
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(result)
 
 
 # start of projection execution
