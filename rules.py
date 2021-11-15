@@ -53,9 +53,7 @@ class ApplyRules(object):
     def validate(self, pods):
         result = []
         for pod in pods:
-            image_prefix_rule = self.__validate_image_prefix(
-                images=pod.images
-            )
+            image_prefix_rule = self.__validate_image_prefix(images=pod.images)
             team_label_present = self.__validate_label(labels=pod.labels)
             recent_start_time = self.__validate_recent_start_time(start_time=pod.recent_start_time)
             pod_result = {
