@@ -1,4 +1,4 @@
-from kube_pod_rules_validator.kube import PodApi
+from kube import PodApi
 from rules import ApplyRules
 import pprint
 
