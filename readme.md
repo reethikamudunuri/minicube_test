@@ -1,15 +1,15 @@
-#cloning the repo
+# cloning the repo
 
 git clone https://github.com/reethikamudunuri/minicube_test.git
 
-#creating virtual env
+# creating virtual env
 virtualenv venv --python=python3
 
-#activating
+# activating
 source venv/bin/activate
 
-#installations
+# installations
 pip install --r requirements
 
-#run the file
+# run the file
 python main.py
